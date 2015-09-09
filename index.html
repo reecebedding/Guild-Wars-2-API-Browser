@@ -5,8 +5,14 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	</head>
-	<body>
-		<h1>Guild Wars 2 API Browser</h1> 
-		<input type="text" class="form-control" />
+	<body ng-app="apiBrowser">
+		<div ng-controller="browserController">
+			<h1>Guild Wars 2 API Browser</h1> 
+			<input type="text" class="form-control">		
+		</div>
+
+		<script type="text/javascript" src="js/boostrap.min.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app/browserController.js"></script>
 	</body>
 </html>
