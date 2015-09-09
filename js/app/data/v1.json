@@ -1,0 +1,9 @@
+var v1ApiStaticData =
+{
+	"version":"1",
+	"endpoints":[{
+		"url":"/v1/build.json"
+	},{
+		"url":"/v1/colors.json"	
+	}]
+};

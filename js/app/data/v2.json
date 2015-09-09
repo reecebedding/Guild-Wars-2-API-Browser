@@ -1,0 +1,9 @@
+var v2ApiStaticData =
+{
+	"version":"2",
+	"endpoints":[{
+		"url":"/v2/build"
+	},{
+		"url":"/v2/account"	
+	}]
+};

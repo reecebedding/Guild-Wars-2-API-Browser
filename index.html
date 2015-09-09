@@ -7,12 +7,32 @@
 	</head>
 	<body ng-app="apiBrowser">
 		<div ng-controller="browserController">
-			<h1>Guild Wars 2 API Browser</h1> 
-			<input type="text" class="form-control">		
+			<div class="container">
+				<h1>Guild Wars 2 API Browser</h1> 
+				<form>
+					<div class="row">
+						<div class="form-group col-xs-2">
+							<label>Version</label>
+							<select class="form-control" ng-change="LoadVersionEndpoints()" ng-model="selectedVersion" ng-options="ver for ver in versions">
+							</select>
+						</div>
+						<div class="form-group col-xs-5">
+						i	<label>Endpoint</label>
+							<select class="form-control" ng-model="selectedEndpoint" ng-options="end.url for end in endpoints">
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 
-		<script type="text/javascript" src="js/boostrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-resource.min.js"></script>
+
+		<script type="text/javascript" src="js/app/data/v2.json"></script>
+		<script type="text/javascript" src="js/app/data/v1.json"></script>
 		<script type="text/javascript" src="js/app/browserController.js"></script>
 	</body>
 </html>
