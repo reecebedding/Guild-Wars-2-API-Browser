@@ -17,12 +17,19 @@
 							</select>
 						</div>
 						<div class="form-group col-xs-5">
-						i	<label>Endpoint</label>
+							<label>Endpoint</label>
 							<select class="form-control" ng-model="selectedEndpoint" ng-options="end.url for end in endpoints">
 							</select>
 						</div>
-					</div>
+						<div class="form-group col-xs-2">
+							<label>&nbsp;</label>
+							<input type="button" class="form-control" ng-click="SearchAPI()" value="GET" />
+						</div>
+					</div>				
 				</form>
+				<div>
+					{{ apiData }}
+				</div>
 			</div>
 		</div>
 
