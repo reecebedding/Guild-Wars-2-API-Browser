@@ -5,5 +5,12 @@ var v2ApiStaticData =
 		"url":"/v2/build"
 	},{
 		"url":"/v2/account"	
+	},{
+		"url":"/v2/commerce/prices",
+		"parameters":[{
+			"name":"ids",
+			"description":"Comma seperated list of item ids to query",
+			"required":false
+		}]
 	}]
 };

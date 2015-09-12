@@ -26,6 +26,12 @@
 							<input type="button" class="form-control" ng-click="SearchAPI()" value="GET" />
 						</div>
 					</div>				
+					<div class="row" ng-show="selectedEndpoint.parameters.length > 0">			
+						<div class="form-group col-xs-4 parameter" ng-repeat="param in selectedEndpoint.parameters">
+							<label title="{{ param.description }}">{{ param.name }} <span ng-show="{{ !param.required }}">(Optional)</span></label>
+							<input type="text" class="form-control" id="{{ param.name  }}" />
+						</div>		
+					</div>
 				</form>
 				<div>
 					{{ apiData }}
