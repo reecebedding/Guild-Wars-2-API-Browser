@@ -28,6 +28,19 @@
 			if(ValidateFields()){
 				var formattedUrl = "https://api.guildwars2.com" + $scope.selectedEndpoint.url;
 				$scope.apiData = "";			
+				
+				var params = [];
+				$(".parameter input").each(function(index){
+					var value = $(this).val().trim();
+					var name = $(this).attr('data-fieldname').trim();
+					if(value.length > 0){
+						params.push(name + "=" + value);
+					}
+				});
+
+				if(params.length > 0){
+					formattedUrl = formattedUrl + "?" + params.join('&');
+				}
 
 				var request = CreateCORSRequest(formattedUrl);
 				request.onload = function(){
