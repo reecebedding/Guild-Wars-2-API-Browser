@@ -11,6 +11,16 @@
 			<div class="container">
 				<h1>Guild Wars 2 API Browser</h1> 
 				<form>
+                    <div class="row">
+                        <div class="form-group col-xs-10">
+                            <label>API Key</label>
+                            <input type="text" ng-model="apiKey" class="form-control" ng-change="RememberAPI()" />
+                        </div>
+                        <div class="form-group col-xs-2" ng-show="typeof(Storage) !== 'undefined'">
+                            <label>Remember</label>
+                            <input type="checkbox" ng-model="rememberApi" class="form-control" ng-change="RememberAPI()" />
+                        </div>
+                    </div>
 					<div class="row">
 						<div class="form-group col-xs-2">
 							<label>Version</label>

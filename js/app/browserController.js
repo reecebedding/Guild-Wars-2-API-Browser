@@ -21,6 +21,24 @@
 					break;
 			}			
 		}
+        
+        if(localStorage.apiKey){
+            $scope.rememberApi = true;
+            $scope.apiKey = localStorage.apiKey;
+        }else{
+            $scope.rememberApi = false;
+            $scope.apiKey = "";
+        }
+                
+        $scope.RememberAPI = function(){
+               if($scope.rememberApi){
+                    localStorage.apiKey = $scope.apiKey;
+               }else{
+                   if(localStorage.apiKey){                   
+                        localStorage.removeItem("apiKey");
+                   }
+               }
+        }
 		
 		$scope.SearchAPI = function(){						
 			if(ValidateFields()){
