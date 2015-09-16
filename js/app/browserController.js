@@ -8,6 +8,8 @@
 		$scope.endpoints = v2ApiStaticData.endpoints;
 		$scope.selectedEndpoint = {};
 
+        $scope.currentData = {};
+        
 		$scope.LoadVersionEndpoints = function(){
 			switch($scope.selectedVersion){
 				case "v1":
@@ -39,6 +41,8 @@
                    }
                }
         }
+        
+        $scope.displayStyle = 0;
 		
 		$scope.SearchAPI = function(){						
 			if(ValidateFields()){
@@ -59,22 +63,31 @@
 
 				var request = CreateCORSRequest(formattedUrl);
 				request.onload = function(){
-                    $("#apiData").text("");
-                    
-					var dataObj = JSON.parse(request.responseText);
-                    
-                    renderjson.set_icons('+', '-');
-                    renderjson.set_show_to_level(2);
-                    var dataMarkup = renderjson(dataObj);                                        
-                    
-                    $("#apiData").append(dataMarkup)
-					$scope.$apply();
+                    $scope.currentData = JSON.parse(request.responseText);
+                    $scope.RenderData($scope.currentData);
 				};
 				request.onerror = function(){
 				};			
 				request.send();
 			}
 		}
+        
+        $scope.RenderData = function(data){
+                $("#apiData").text("");            
+                var dataMarkup = "";
+                    
+                if($scope.displayStyle == 0){
+                    //Display raw JSON
+                    dataMarkup = "<pre>" + JSON.stringify(data,null,"    ") + "</pre>";
+                }else if($scope.displayStyle == 1){
+                    //Display as collapsable JSON
+                    renderjson.set_icons('+', '-');
+                    renderjson.set_show_to_level(2);
+                    dataMarkup = renderjson(data);                                        
+                }
+
+                $("#apiData").append(dataMarkup);
+        }
 
 		$scope.anyFieldErrors = false;
 		function ValidateFields(){
