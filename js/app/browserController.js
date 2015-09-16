@@ -76,16 +76,17 @@
                 $("#apiData").text("");            
                 var dataMarkup = "";
                     
-                if($scope.displayStyle == 0){
-                    //Display raw JSON
-                    dataMarkup = "<pre>" + JSON.stringify(data,null,"    ") + "</pre>";
-                }else if($scope.displayStyle == 1){
-                    //Display as collapsable JSON
-                    renderjson.set_icons('+', '-');
-                    renderjson.set_show_to_level(2);
-                    dataMarkup = renderjson(data);                                        
+                if(!$.isEmptyObject(data)){            
+                    if($scope.displayStyle == 0){
+                        //Display raw JSON
+                        dataMarkup = "<pre>" + JSON.stringify(data,null,"    ") + "</pre>";
+                    }else if($scope.displayStyle == 1){
+                        //Display as collapsable JSON
+                        renderjson.set_icons('+', '-');
+                        renderjson.set_show_to_level(2);
+                        dataMarkup = renderjson(data);                                        
+                    }
                 }
-
                 $("#apiData").append(dataMarkup);
         }
 
