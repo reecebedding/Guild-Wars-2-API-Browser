@@ -40,7 +40,7 @@
 					<div class="row" ng-show="selectedEndpoint.parameters.length > 0">			
 						<div class="form-group col-xs-4 parameter" ng-repeat="param in selectedEndpoint.parameters | orderBy:'required':true">
 							<label title="{{ param.description }}">{{ param.name }} <span ng-show="{{ !param.required }}">(Optional)</span></label>
-							<input type="text" class="form-control" id="param_{{ param.name  }}" data-fieldname="{{ param.name  }}" data-fieldrequired="{{ param.required  }}"/>
+							<input type="text" class="form-control" id="param_{{ param.name  }}" data-fieldname="{{ param.name  }}" data-fieldrequired="{{ param.required  }}" value="{{param.name == 'access_token' ? apiKey : '' }}"/>
 						</div>		
 					</div>
 				</form>

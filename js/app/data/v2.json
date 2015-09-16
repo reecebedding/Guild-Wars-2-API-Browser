@@ -4,7 +4,12 @@ var v2ApiStaticData =
 	"endpoints":[{
 		"url":"/v2/build"
 	},{
-		"url":"/v2/account"	
+		"url":"/v2/account",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
 	},{
 		"url":"/v2/commerce/prices",
 		"parameters":[{
