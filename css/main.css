@@ -9,3 +9,10 @@
 .renderjson .keyword       { color: lightgoldenrodyellow; }
 .renderjson .object.syntax { color: lightseagreen; }
 .renderjson .array.syntax  { color: lightsalmon; }
+
+
+#formattedUrlContainer{
+    white-space: nowrap; 
+    overflow: scroll;
+    color: greenyellow; 
+}

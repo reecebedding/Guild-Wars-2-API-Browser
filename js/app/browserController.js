@@ -7,7 +7,8 @@
 		
 		$scope.endpoints = v2ApiStaticData.endpoints;
 		$scope.selectedEndpoint = {};
-
+        
+        $scope.formattedUrl = "";
         $scope.currentData = {};
         
 		$scope.LoadVersionEndpoints = function(){
@@ -46,7 +47,7 @@
 		
 		$scope.SearchAPI = function(){						
 			if(ValidateFields()){
-				var formattedUrl = "https://api.guildwars2.com" + $scope.selectedEndpoint.url;	
+				$scope.formattedUrl = "https://api.guildwars2.com" + $scope.selectedEndpoint.url;	
 				
 				var params = [];
 				$(".parameter input").each(function(index){
@@ -58,10 +59,10 @@
 				});
 
 				if(params.length > 0){
-					formattedUrl = formattedUrl + "?" + params.join('&');
+					$scope.formattedUrl = $scope.formattedUrl + "?" + params.join('&');
 				}
 
-				var request = CreateCORSRequest(formattedUrl);
+				var request = CreateCORSRequest($scope.formattedUrl);
 				request.onload = function(){
                     $scope.currentData = JSON.parse(request.responseText);
                     $scope.RenderData($scope.currentData);
