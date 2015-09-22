@@ -4,6 +4,144 @@ var v1ApiStaticData =
 	"endpoints":[{
 		"url":"/v1/build.json"
 	},{
-		"url":"/v1/colors.json"	
-	}]
+		"url":"/v1/colors.json",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        }]
+	},{
+        "url":"/v1/continents.json",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to display the texts in. Possible values: en, de, es, fr",
+            "required":false
+        }]    
+    },{
+        "url":"/v1/event_details.json",
+        "parameters":[{
+            "name":"event_id",
+            "description":"Only list this event",
+            "required":false
+        },{
+            "name":"lang",
+            "description":"Show localized texts in the specified langauge. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/event_names.json",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/files.json"        
+    },{
+        "url":"/v1/guild_details.json",
+        "parameters":[{
+            "name":"guild_id",
+            "description":"The guild id to query for",
+            "required":true
+        },{
+            "name":"guild_name",
+            "description":"The guild name to query for",
+            "required":true
+        }]
+    },{
+        "url":"/v1/item_details.json",
+        "parameters":[{
+            "name":"item_id",
+            "description":"The item to query for",
+            "required":true
+        },{
+            "name":"lang",
+            "description":"The language to display the texts in. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/items.json"
+    },{
+        "url":"/v1/map_floor.json",
+        "parameters":[{
+            "name":"continent_id",
+            "description":"The continent",
+            "required":true
+        },{
+            "name":"floor",
+            "description":"The map floor",
+            "required":true
+        },{
+            "name":"lang",
+            "description":"Show localized texts in the specified language. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/map_names.json",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/maps.json",
+        "parameters":[{
+            "name":"map_id",
+            "description":"Only list this map",
+            "required":false
+        },{
+            "name":"lang",
+            "description":"Show localized texts in the specified language. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/recipe_details.json",
+        "parameters":[{
+            "name":"recipe_id",
+            "description":"The recipe to query for",
+            "required":true
+        },{
+            "name":"lang",
+            "description":"The language to display the texts in. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/recipes.json"
+    },{
+        "url":"/v1/skin_details.json",
+        "parameters":[{
+            "name":"skin_id",
+            "description":"The item to query for",
+            "required":true
+        },{
+            "name":"lang",
+            "description":"The language to display the texts in. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/skins.json"        
+    },{
+        "url":"/v1/world_names.json",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    },{
+        "url":"/v1/wvw/match_details.json",
+        "parameters":[{
+            "name":"match_id",
+            "description":"The WvW match to query for",
+            "required":true
+        }]
+    },{
+        "url":"/v1/wvw/matches.json"
+    },{
+        "url":"/v1/wvw/objective_names.json",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        }]
+    }]
 };
