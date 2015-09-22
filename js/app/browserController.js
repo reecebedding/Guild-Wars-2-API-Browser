@@ -90,6 +90,10 @@
                 }
                 $("#apiData").append(dataMarkup);
         }
+        
+        $scope.PromptCopyUrl = function(){
+               window.prompt("Press Ctrl+C then Enter to copy URL", $scope.formattedUrl);
+        }
 
 		$scope.anyFieldErrors = false;
 		function ValidateFields(){

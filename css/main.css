@@ -15,4 +15,10 @@
     white-space: nowrap; 
     overflow: scroll;
     color: greenyellow; 
+    margin: 5px 0 5px 0;
+}
+
+#copyImage{
+   width: 20px;
+   margin-right: 5px;
 }

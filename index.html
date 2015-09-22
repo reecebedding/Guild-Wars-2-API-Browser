@@ -47,7 +47,7 @@
                 Raw <input type="radio" ng-model="displayStyle" value="0" ng-change="RenderData(currentData);" />
                 Collapsed <input type="radio" ng-model="displayStyle" value="1" ng-change="RenderData(currentData);" />
 				<div class="alert alert-danger" ng-show="anyFieldErrors">Fields required</div>
-                <div id="formattedUrlContainer" ng-show="formattedUrl.length > 0">{{ formattedUrl }}</div>
+                <div id="formattedUrlContainer" ng-show="formattedUrl.length > 0"><img src="images/copy.png" id="copyImage" ng-dblclick="PromptCopyUrl();"/>{{ formattedUrl }}</div>
 				<div id="apiData" >
                 </div>
                 
