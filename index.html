@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guild Wars 2 API Browser</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">        
+	</head>
+	<body ng-app="apiBrowser">
+		<div ng-controller="browserController">
+			<div class="container">
+				<h1>Guild Wars 2 API Browser</h1> 
+				<form>
+                    <div class="row">
+                        <div class="form-group col-xs-10">
+                            <label>API Key</label>
+                            <input type="text" ng-model="apiKey" class="form-control" ng-change="RememberAPI()" />
+                        </div>
+                        <div class="form-group col-xs-2" ng-show="typeof(Storage) !== 'undefined'">
+                            <label>Remember</label>
+                            <input type="checkbox" ng-model="rememberApi" class="form-control" ng-change="RememberAPI()" />
+                        </div>
+                    </div>
+					<div class="row">
+						<div class="form-group col-xs-2">
+							<label>Version</label>
+							<select class="form-control" ng-change="LoadVersionEndpoints()" ng-model="selectedVersion" ng-options="ver for ver in versions" id="apiVersion">
+							</select>
+						</div>
+						<div class="form-group col-xs-5">
+							<label>Endpoint</label>
+							<select class="form-control" ng-model="selectedEndpoint" ng-options="end.url for end in endpoints" id="apiEndpoint">
+							</select>
+						</div>
+						<div class="form-group col-xs-2">
+							<label>&nbsp;</label>
+							<input type="button" class="form-control" ng-click="SearchAPI()" value="GET" />
+						</div>
+					</div>				
+					<div class="row" ng-show="selectedEndpoint.parameters.length > 0">			
+						<div class="form-group col-xs-4 parameter" ng-repeat="param in selectedEndpoint.parameters | orderBy:'required':true">
+							<label title="{{ param.description }}">{{ param.name }} <span ng-show="{{ !param.required }}">(Optional)</span></label>
+							<input type="text" class="form-control" id="param_{{ param.name  }}" data-fieldname="{{ param.name  }}" data-fieldrequired="{{ param.required  }}" value="{{param.name == 'access_token' ? apiKey : '' }}"/>
+						</div>		
+					</div>
+				</form>
+                Raw <input type="radio" ng-model="displayStyle" value="0" ng-change="RenderData(currentData);" />
+                Collapsed <input type="radio" ng-model="displayStyle" value="1" ng-change="RenderData(currentData);" />
+				<div class="alert alert-danger" ng-show="anyFieldErrors">Fields required</div>
+                <div id="formattedUrlContainer" ng-show="formattedUrl.length > 0"><img src="images/copy.png" id="copyImage" ng-dblclick="PromptCopyUrl();"/>{{ formattedUrl }}</div>
+				<div id="apiData" >
+                </div>
+                
+				
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-resource.min.js"></script>
+        <script type="text/javascript" src="js/renderjson.js"></script>
+        
+		<script type="text/javascript" src="js/app/data/v2.json"></script>
+		<script type="text/javascript" src="js/app/data/v1.json"></script>
+		<script type="text/javascript" src="js/app/browserController.js"></script>
+	</body>
+</html>

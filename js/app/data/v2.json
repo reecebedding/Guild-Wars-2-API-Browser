@@ -1,0 +1,268 @@
+var v2ApiStaticData =
+{
+	"version":"2",
+	"endpoints":[{
+		"url":"/v2/account",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/account/bank",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/account/dyes",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/account/materials",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/account/skins",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/account/wallet",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/build"
+	},{
+		"url":"/v2/characters",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate endpoint with",
+            "required":true
+        },{
+            "name":"ids",
+            "descriptions":"A comma-seperated list of character names to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/colors",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/commerce/exchange"
+	},{
+		"url":"/v2/commerce/exchange/coins",
+        "parameters":[{
+            "name":"quantity",
+            "description":"The amount of coins to exchange for coins",
+            "required":true
+        }]
+	},{
+		"url":"/v2/commerce/exchange/gems",
+        "parameters":[{
+            "name":"quantity",
+            "description":"The amount of gems to exchange for coins",
+            "required":true
+        }]
+	},{
+		"url":"/v2/commerce/listings",
+        "parameters":[{
+            "name":"ids",
+            "description":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/commerce/prices",
+        "parameters":[{
+            "name":"ids",
+            "description":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/commerce/transactions",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate the endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/continents",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/currencies",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "descriptions":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/files",
+        "parameters":[{
+            "name":"ids",
+            "descriptions":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/items",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/maps",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/materials",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/pvp/games",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate the endpoint with",
+            "required":true
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/pvp/stats",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API Key to authenticate the endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/quaggans",
+        "parameters":[{
+            "name":"id",
+            "description":"The id of the quaggan",
+            "required":false
+        },{
+            "name":"url",
+            "description":"The URL to the quaggan image",
+            "required":false
+        }]
+	},{
+		"url":"/v2/recipes",
+        "parameters":[{
+            "name":"ids",
+            "description":"A comma-seperated list of item ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/recipes/search",
+        "parameters":[{
+            "name":"input",
+            "description":"The item id when searching for recipes with an item as an ingredient",
+            "required":false
+        },{
+            "name":"output",
+            "description":"The item id when searching for the recipes that craft an item",
+            "required":false
+        }]
+	},{
+		"url":"/v2/skins",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/specializations",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "descriptions":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/tokeninfo",
+        "parameters":[{
+            "name":"access_token",
+            "description":"API key to authenticate the endpoint with",
+            "required":true
+        }]
+	},{
+		"url":"/v2/traits",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	},{
+		"url":"/v2/worlds",
+        "parameters":[{
+            "name":"lang",
+            "description":"The language to query the names for. Possible values: en, de, es, fr",
+            "required":false
+        },{
+            "name":"ids",
+            "description":"A comma-seperated list of ids to query the listings for",
+            "required":false
+        }]
+	}]
+};

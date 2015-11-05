@@ -1,0 +1,5 @@
+# npm repository
+node_modules
+
+# Swap files
+*.swp
